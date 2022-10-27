@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# 💣 Minesweeper 💣
+The classic game of minesweeper made with pure javascript and react!   
+The goal of the game is to clear every non-bomb tile. Numbers on tiles correspond to how many bombs in the surrounding tiles there are. If a tile is blank there are no bombs in the surrounding tiles.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project live at: https://minesweeper-project-ga.herokuapp.com/  
+![1](https://i.imgur.com/fxt2MQ4.png)
 
-## Available Scripts
+## Packages used  
+React toast for pop-up messages when you either lose or win and Use-Sound for the bomb and flag sounds
 
-In the project directory, you can run:
+## Project background  
+After messing around with ideas of other web-apps and projects I wanted to go back to something more basic and accessible. I did tic-tac-toe as my first project so why not do another classic programming assignment esque game?  
+When deciding what technologies I wanted to use it came down to if I wanted to use react or not -- and of course after learning it over the course of the last four weeks I wanted to give it a shot. Using javascript and react gives me access to tons of documentation and resources to use which ended up helping me a ton.  
 
-### `npm start`
+When planning my project I originally wanted to make an app that had tons of features and would be a complete website that I could host online and people could actually use and populate -- after a day of planning it I realised the scope was too large and my timeframe was too small. For planning my minesweeper app I had a few basic ideas in terms of using arrays and rendering a full board to populate with bomb tiles. I didn't find sketches or wireframing necissary in developing a classic windows game so I just starting coding with the general idea of it needs to work (and look) like the original windows game.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I created a 2D array for the board in which elements would either be 'X' if its a bomb and 0-8 depending on adjacent tiles. Tiles also needed to be flagged (or not flagged) and shown or hidden depending on what the user clicks. To actually render the board I used useState and useEffect from react which took a lot of time to understand fully. One of the toughest things to get working was having when the user clicks on a tile with zero bombs it also needs to reveal the tiles connected to the original that are also zero - this continues until the area is surrounded (the most satisfying part about minesweeper IMO).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Bugs and problems  
+Sometimes the sound doesnt load on heroku  
+The board will reset into an already completed state under certain conditions  
+I didnt finish the code to get the whole app to pause while it reloads after a bomb explodes, if you spam click it will spam toast messages and sound effects.  
+Let me know on github if you find more bugs and ill try to fix them.
