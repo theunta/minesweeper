@@ -20,4 +20,7 @@ I created a 2D array for the board in which elements would either be 'X' if its 
 Sometimes the sound doesnt load on heroku  
 The board will reset into an already completed state under certain conditions  
 I didnt finish the code to get the whole app to pause while it reloads after a bomb explodes, if you spam click it will spam toast messages and sound effects.  
+The win condition sometimes doesnt trigger after you get to 0 remaining tiles.  
+
 Let me know on github if you find more bugs and ill try to fix them.
+
